@@ -1,5 +1,5 @@
 # Partial-Clinic-Management-System
-A Simple GUI Based Object Oriented Program using Java Swing. It was done as project for Object Oriented Programming-1 (Java) course during Fall-2019. It is a Partial Clinic Management System that implements the four pillars of Object Oriented Programming: Encapsulation, Abstraction, Inheritance and Polymorphism and shows a database connectivity using MySQL. 
+A Simple GUI Based Object Oriented Program using Java Swing. It was done as a project for Object Oriented Programming-1 (Java) course during Fall-2019. It is a Partial Clinic Management System that implements the four pillars of Object Oriented Programming: Encapsulation, Abstraction, Inheritance and Polymorphism and shows a database connectivity using MySQL. 
 # Features
 In this program the user "Admin" has the following features:
 
