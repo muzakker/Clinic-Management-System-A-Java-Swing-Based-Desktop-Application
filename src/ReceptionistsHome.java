@@ -82,51 +82,6 @@ public class ReceptionistsHome extends JFrame {
 		});
 		this.upperPanel.add(btnSearch);
 
-		/*
-		btnAdd = new JButton("Add");
-		btnAdd.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				Add a = new Add();
-				a.setVisible(true);
-
-			}
-		});
-		this.upperPanel.add(btnAdd);
-
-		btnEdit = new JButton("Edit");
-		btnEdit.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				int row = tblUsers.getSelectedRow();
-
-				if(row<0)
-				{
-					JOptionPane.showMessageDialog(null, "Please Select A Row First");
-					return;
-				}
-
-				int id = (int)tblUsers.getValueAt(row, 0);
-				JOptionPane.showMessageDialog(null, id);
-				txtSearch.setText((String)tblUsers.getValueAt(row, 1));
-			}
-		});
-		this.upperPanel.add(btnEdit);
-
-		btnDelete = new JButton("Delete");
-		btnDelete.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-			}
-		});
-		this.upperPanel.add(btnDelete);
-		 */
 
 	}
 
@@ -184,7 +139,6 @@ public class ReceptionistsHome extends JFrame {
 		});
 		this.bottomPanel.add(addNewPatient);
 		}
-
 
 }
 
