@@ -10,15 +10,7 @@ public class PatientsTableModel extends AbstractTableModel {
 
     public PatientsTableModel(String key) {
         String query = "select * from `doctor#"+key+"`";
-        // if(!key.equals(""))
-        // query = query + " WHERE specialty NOT LIKE 'null' && name like '%"+key+"%' OR specialty NOT LIKE 'null' && specialty LIKE '%"+key+"%'";
-
-        // "select * from user" where specialty not like `null`;
-        // SELECT * FROM `user` WHERE `specialty` NOT LIKE 'null'
-        // SELECT * FROM user WHERE specialty NOT LIKE 'null'
-        // SELECT * FROM user WHERE specialty NOT LIKE 'null' && name like '%"+key+"%'";
-        // SELECT * FROM user WHERE specialty NOT LIKE 'null' && name like '%su%';
-        // " where name like '%"+key+"%'"
+       
 
         DataAccess da = new DataAccess();
         patients = da.GetPatients(query);
