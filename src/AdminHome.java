@@ -18,21 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-/*
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.List;
-
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-
- */
 
 
 public class AdminHome extends JFrame{
@@ -50,7 +35,6 @@ public class AdminHome extends JFrame{
 		super("Home");
 		this.setLocation(250, 350);
 		this.setSize(600, 600);
-		//this.setVisible(true);
 		this.setLayout(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -117,104 +101,36 @@ public class AdminHome extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				/*
 				int row = tblUsers.getSelectedRow();
-
-				if(row<0)
-				{
-					JOptionPane.showMessageDialog(null, "Please Select A Row First");
-					return;
-				}
-
-				 */
-
-				int row = tblUsers.getSelectedRow();
-				int id = (int) tblUsers.getValueAt(row, 0);
-				// System.out.println(id);
-
-				// String stOne   = (String) tblUsers.getValueAt(row, 1);
-				// String stTwo   = (String) tblUsers.getValueAt(row, 2);
-				// String stThree = (String) tblUsers.getValueAt(row, 3);
-
-				// System.out.println(id);
+				int id = (int) tblUsers.getValueAt(row, 0);		
 
 				Edit editOne = new Edit(id);
 				editOne.setVisible(true);
-
-				/*
-				int id = (int)tblUsers.getValueAt(row, 0);
-				JOptionPane.showMessageDialog(null, id);
-				txtSearch.setText((String)tblUsers.getValueAt(row, 1));
-
-				 */
 			}
 		});
 		this.upperPanel.add(btnEdit);
 
-		/*
-
-		btnDelete.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// String query2 = "delete from emp where id = 1";
-
-				/*
-				int row = tblUsers.getSelectedRow();
-				int id = (int) tblUsers.getValueAt(row, 0);
-
-				System.out.println(id);
-
-				Edit editOne = new Edit(id);
-				editOne.setVisible(true);
-
-				 */
-
-				/*
-				String fetchSql =
-				DataAccess d = new DataAccess();
-				d.deleteRow(asdf);
-
-				 */
-				/*
-				populateTable();
-
-			}
-		});
-
-		*/
+		
 
 		btnDelete = new JButton("Delete");
 		this.upperPanel.add(btnDelete);
 		btnDelete.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int row = tblUsers.getSelectedRow();
-				// System.out.println(row);
-				// tblUsers.fireTableRowsDeleted(int, int);
-				// ... tblUsers.fireTableRowsDeleted(row, row);
+				int row = tblUsers.getSelectedRow();	
 				int id = (int) tblUsers.getValueAt(row, 0);
-				String isDoc = (String) tblUsers.getValueAt(row, 2);
-				// System.out.println(id);
+				String isDoc = (String) tblUsers.getValueAt(row, 2);	
 
 				String deleteSql = "DELETE FROM `user` WHERE `user`.`id` = "+id+"";
 
 				DataAccess d = new DataAccess();
 				d.deleteRow(deleteSql);
 
-				/*
-				System.out.println(isDoc);
-				System.out.println(id);
-				System.out.println("DROP TABLE ` doctor#"+id+" `");
-
-				 */
-
-
+				
 				if(isDoc.equals("doctor")) {
 					String deleteTable = "DROP TABLE `doctor#"+id+"`;";
 					d.deleteRow(deleteTable);
 				}
-
 
 
 				populateTable();
@@ -233,32 +149,12 @@ public class AdminHome extends JFrame{
 		this.lowerPanel.add(sp);
 		sp.setViewportView(tblUsers);
 
-		/*
-		tblUsers.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				super.mouseClicked(e);
-			}
-		});
-
-		 */
-
 		tblUsers.addMouseListener((new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// super.mousePressed(e);
-				int row = tblUsers.rowAtPoint(e.getPoint());
-				// System.out.println(row);
+				int row = tblUsers.rowAtPoint(e.getPoint());	
 
 				tblUsers.getSelectionModel().setSelectionInterval(row, row);
-
-
-				/*
-				if(e.getButton() == MouseEvent.BUTTON1) {
-					// pop-up
-				}
-
-				 */
 			}
 		}));
 		
