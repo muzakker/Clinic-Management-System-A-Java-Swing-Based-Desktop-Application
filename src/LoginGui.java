@@ -15,10 +15,8 @@ public class LoginGui extends JFrame{
 	private LoginGui thisVbOne = this;
 	
 	public LoginGui(){
-		//super("Login");
 		this.setLocation(250, 350);
 		this.setSize(600, 600);
-		//this.setVisible(true);
 		this.setLayout(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -56,33 +54,19 @@ public class LoginGui extends JFrame{
 
 				boolean b = da.login(txtID.getText(), txtPass.getText());
 
-				/*
-				if(b == true && typeLogIn.equals("receptionist")) {
-					// typeLogIn = "GO";
-					// b == true && typeLogIn.equals("receptionist")
-					System.out.println(typeLogIn);
-					setVisible(false);
-					// Home h = new Home();
-					// h.setVisible(true);
-					// && typeLogIn.equals("admin")
-				}
-				*/
 
 				if(b == true && typeLogIn.equals("receptionist")) {
 					setVisible(false);
-					// ReceptionistsHome rh = new ReceptionistsHome();
 					ReceptionistsHome rh = new ReceptionistsHome(thisVbOne);
 					rh.setVisible(true);
 				}
 
 				else if(b == true && typeLogIn.equals("admin")) {
-					// System.out.println(typeLogIn);
 					setVisible(false);
 					AdminHome ah = new AdminHome();
 					ah.setVisible(true);
 				}
 				else if(b == true && typeLogIn.equals("doctor")) {
-					// System.out.println(typeLogIn);
 					setVisible(false);
 					DoctorsHome dh = new DoctorsHome(doctorIdStr);
 					dh.setVisible(true);
