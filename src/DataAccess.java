@@ -17,8 +17,6 @@ public class DataAccess {
 	public DataAccess(){
 		try {
 			con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "");
-//			con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/user", "root", "");
-//			con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/falldb", "root", "");
 			stat = (Statement) con.createStatement();
 		}
 		catch (SQLException e) {
@@ -34,9 +32,7 @@ public class DataAccess {
 		try{
 			res = stat.executeQuery(sql);
 			if(res.next()){
-				// strType = "receptionist";
-				// strType = res.getString("type");
-				//System.out.println(res.getString("type"));
+				
 				LoginGui.typeLogIn = res.getString("type");
 				if(LoginGui.typeLogIn.equals("doctor")) {
 					LoginGui.doctorIdStr = res.getString("id");
@@ -149,10 +145,6 @@ public class DataAccess {
 
 	public void deleteRow(String sql) {
 
-
-	// sql - "DELETE FROM `user` WHERE `id` = '"+delValue+"'";
-	// sql - "DELETE FROM `user` WHERE `user`.`id` = 213"?
-	// sql - "DELETE FROM `user` WHERE `user`.`id` = "+id+"";
 
 		try {
 			// stat.executeUpdate(sql);
