@@ -10,22 +10,14 @@ public class ReceptionistsTableModel extends AbstractTableModel {
 
     public ReceptionistsTableModel(String key) {
         String query = "select * from user";
-        // if(!key.equals(""))
-        // FIXXX Here
+        
             query = query + " WHERE specialty NOT LIKE 'null' && name like '%"+key+"%' OR specialty NOT LIKE 'null' && specialty LIKE '%"+key+"%'";
 
-        // "select * from user" where specialty not like `null`;
-        // SELECT * FROM `user` WHERE `specialty` NOT LIKE 'null'
-        // SELECT * FROM user WHERE specialty NOT LIKE 'null'
-        // SELECT * FROM user WHERE specialty NOT LIKE 'null' && name like '%"+key+"%'";
-        // SELECT * FROM user WHERE specialty NOT LIKE 'null' && name like '%su%';
-        // " where name like '%"+key+"%'"
 
         DataAccess da = new DataAccess();
         doctors = da.GetDoctors(query);
     }
 
-    // ^ modify for type not null && make search work
 
     @Override
     public int getColumnCount() {
@@ -72,8 +64,6 @@ public class ReceptionistsTableModel extends AbstractTableModel {
             return null;
         }
     }
-
-
 
 }
 
