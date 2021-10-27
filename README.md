@@ -17,6 +17,15 @@ A Simple GUI Based Object Oriented Program using Java Swing. It was done as a pr
 **Doctor**
 -	Can view his registered patient’s list
 
+# OOP and Java Concepts Used
+-	**Association:** Creating another class’s object in current class.
+-	**Swing Components:** Used many JComponents such as: JTextField, JButton, JTable etc.
+-	**Swing Containers:** Used JContainers such as JFrame, JPanel etc.
+
+# Tools Used
+-	IntelliJ IDEA - as development environment
+-	Xampp - as web server
+
 # Project Contributors
 1. Md. Muzakker Hossain (18-37801-2@student.aiub.edu)
 2. Ahsanul Haque Didar (18-37779-2@student.aiub.edu)
