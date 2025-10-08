@@ -1,4 +1,4 @@
-# Partial-Clinic-Management-System
+# Clinic-Management-System
 A GUI based application implementing Object-Oriented concepts using Java Swing. It was completed as a project for Object-Oriented Programming-1 (Java) course during Fall-19.
 
 # Features
